@@ -36,7 +36,7 @@ export const FeaturedProjects: React.FC = () => {
 
         {/* Feature 01: Lead Editorial Showcase (Innovation & Idea Submission Portal) */}
         {mainProject && (
-          <div className="mb-10 p-7 sm:p-10 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors">
+          <div className="portfolio-card mb-10 p-7 sm:p-10 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column: Project Overview (7 cols) */}
               <div className="lg:col-span-7 space-y-4">
@@ -137,7 +137,7 @@ export const FeaturedProjects: React.FC = () => {
             {secondaryProjects.map((project, pIdx) => (
             <div
               key={project.id}
-              className="p-7 sm:p-8 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors flex flex-col justify-between"
+              className="portfolio-card p-7 sm:p-8 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-2">

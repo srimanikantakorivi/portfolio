@@ -85,7 +85,7 @@ test('private PDF preview actions are restricted to the administrator', () => {
   const block = { id: 'pdf', type: 'document_preview', documentTitle: 'Certificate', documentType: 'pdf', documentUrl: 'attachments/private.pdf', allowDownload: false };
   const Public = load('src/components/blocks/DocumentPreview.tsx').DocumentPreview;
   const publicHtml = renderToStaticMarkup(React.createElement(Public, { block }));
-  assert.match(publicHtml, /Admin preview only/);
+  assert.equal(publicHtml, '');
   assert.doesNotMatch(publicHtml, /<button|<iframe|href=/);
   const Admin = load('src/components/blocks/DocumentPreview.tsx', {}, true).DocumentPreview;
   assert.match(renderToStaticMarkup(React.createElement(Admin, { block })), /Preview document/);

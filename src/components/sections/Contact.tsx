@@ -3,7 +3,7 @@ import { SectionHeader } from '../common/SectionHeader';
 import { Badge } from '../common/Badge';
 import { Button } from '../common/Button';
 import { Send, CheckCircle2, AlertCircle, ArrowUpRight, MessageSquare, ShieldCheck } from 'lucide-react';
-import { GithubIcon } from '../common/Icons';
+import { GithubIcon, LinkedinIcon } from '../common/Icons';
 import { usePortfolioData } from '../../contexts/PortfolioDataContext';
 
 export const Contact: React.FC = () => {
@@ -68,6 +68,11 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Confirmed Channels Column (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
+            {profile.linkedinUrl && <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" className="portfolio-card group flex items-center gap-4 p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2]">
+              <span className="p-3 rounded-xl bg-[#EBF0EA] text-[#4D5E4B]"><LinkedinIcon className="w-5 h-5" /></span>
+              <span className="flex-1"><span className="block text-base font-semibold text-[#181A18]">Connect on LinkedIn</span><span className="block text-xs text-[#5D635D] mt-1">Professional updates, projects and collaboration.</span></span>
+              <ArrowUpRight className="w-4 h-4 text-[#4D5E4B]" />
+            </a>}
             {/* Confirmed GitHub Profile Card */}
             <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors space-y-3">
               <div className="flex items-start justify-between gap-3">
@@ -125,7 +130,7 @@ export const Contact: React.FC = () => {
                     Message Recorded
                   </h3>
                   <p className="text-xs sm:text-sm text-[#525852] max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong className="text-[#181A18]">{formState.name}</strong>. Your inquiry has been securely transmitted and logged in the single-admin portfolio database.
+                    Thank you, <strong className="text-[#181A18]">{formState.name}</strong>. Your message has been received. I will get back to you using the email you provided.
                   </p>
                   <Button variant="outline" size="sm" onClick={handleReset}>
                     Send Another Note

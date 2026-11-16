@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
-import { GithubIcon } from '../common/Icons';
+import { GithubIcon, LinkedinIcon } from '../common/Icons';
 import { Button } from '../common/Button';
 import { usePortfolioData } from '../../contexts/PortfolioDataContext';
 
@@ -108,6 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-3">
+            {profile.linkedinUrl && <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-2 text-[#565C56] hover:text-[#181A18] hover:bg-[#F2EEE4] rounded-lg transition-colors"><LinkedinIcon className="w-4 h-4" /></a>}
             <a
               href={profile.githubUrl}
               target="_blank"
@@ -143,6 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
+            {profile.linkedinUrl && <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-2 text-[#565C56] hover:text-[#181A18] rounded-lg"><LinkedinIcon className="w-5 h-5" /></a>}
             <a
               href={profile.githubUrl}
               target="_blank"

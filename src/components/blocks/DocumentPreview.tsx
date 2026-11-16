@@ -30,11 +30,11 @@ export function DocumentPreview({ block }: { block: DocumentPreviewBlock }) {
     } finally { setLoading(false); }
   };
   if (!block.documentUrl && !block.previewUrl) return null;
-  if (storedDocument && !isAdmin) return <p className="text-xs text-[#6E756E]">Private attachment · Admin preview only</p>;
+  if (storedDocument && !isAdmin) return null;
   return <div className="space-y-3">
     <button type="button" onClick={() => void resolve()} disabled={loading} aria-expanded={open}
       className="rounded-lg border border-[#D5DDD2] bg-[#EBF0EA] px-4 py-2 text-xs font-medium text-[#334233] disabled:opacity-50">
-      {loading ? 'Opening document…' : open ? 'Close preview' : 'Preview document'}
+      {loading ? 'Opening document.' : open ? 'Close preview' : 'Preview document'}
     </button>
     {error && <p role="alert" className="text-xs text-red-700">{error}</p>}
     {open && source && <>

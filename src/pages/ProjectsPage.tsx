@@ -107,7 +107,7 @@ export const ProjectsPage: React.FC = () => {
             {filteredProjects.map((project, pIdx) => (
               <div
                 key={project.id}
-                className="p-7 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors flex flex-col justify-between"
+                className="portfolio-card p-7 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#D5DDD2] transition-colors flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">

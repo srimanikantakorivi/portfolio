@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+.portfolio-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -18px rgb(31 34 31 / 25%); }
+  .portfolio-public a.rounded-lg:hover, .portfolio-public button.rounded-lg:hover { translate: 0 -1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .portfolio-public *, .portfolio-public *::before, .portfolio-public *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @layer base {
   :root {
     --bg-ivory: #FAF8F5;

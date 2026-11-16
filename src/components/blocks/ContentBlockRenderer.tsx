@@ -3,6 +3,7 @@ import type { ContentBlock } from '../../types/contentBlocks';
 import { ExternalLink, FileText, CheckCircle2 } from 'lucide-react';
 import { Badge } from '../common/Badge';
 import { DocumentPreview } from './DocumentPreview';
+import { useAuth } from '../../contexts/AuthContext';
 
 interface ContentBlockRendererProps {
   block: ContentBlock;
@@ -10,6 +11,11 @@ interface ContentBlockRendererProps {
 }
 
 export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ block, className = '' }) => {
+  const { isAdmin } = useAuth();
+  if (block.type === 'document_preview') {
+    const path = block.documentUrl || block.previewUrl;
+    if (path && !/^https:\/\//i.test(path) && !path.startsWith('/') && !isAdmin) return null;
+  }
   switch (block.type) {
     case 'rich_text':
       return (
@@ -99,7 +105,7 @@ export const ContentBlockRenderer: React.FC<ContentBlockRendererProps> = ({ bloc
                 </h4>
                 <p className="text-xs text-[#707670] mt-0.5">
                   Document Type: <span className="uppercase font-mono-code">{block.documentType}</span>
-                  {block.fileName && ` • ${block.fileName}`}
+                  {block.fileName && `  ${block.fileName}`}
                 </p>
               </div>
             </div>

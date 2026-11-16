@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUp, ShieldCheck, Award } from 'lucide-react';
-import { GithubIcon } from '../common/Icons';
+import { GithubIcon, LinkedinIcon } from '../common/Icons';
 import { Badge } from '../common/Badge';
 import { usePortfolioData } from '../../contexts/PortfolioDataContext';
 
@@ -26,14 +26,14 @@ export const Footer: React.FC = () => {
               </h3>
             </div>
             <p className="text-sm text-[#595F59] max-w-md leading-relaxed">
-              B.Tech in Computer Science and Engineering (2024–2028) at KITS Akshar Institute of Technology. Focus on modern web experiences, software fundamentals, and practical AI-assisted workflows.
+              B.Tech in Computer Science and Engineering (2024-2028) at KITS Akshar Institute of Technology. Focus on modern web experiences, software fundamentals, and practical AI-assisted workflows.
             </p>
             <div className="pt-2 flex flex-wrap gap-2">
               <Badge variant="verified" size="sm" icon={<ShieldCheck className="w-3.5 h-3.5" />}>
-                CLLMSP • Red Team Leaders (July 2026)
+                CLLMSP  Red Team Leaders (July 2026)
               </Badge>
               <Badge variant="sage" size="sm" icon={<Award className="w-3.5 h-3.5" />}>
-                Tech Lead • KITS Innovation Club (Gen 2)
+                Tech Lead  KITS Innovation Club (Gen 2)
               </Badge>
             </div>
           </div>
@@ -79,11 +79,6 @@ export const Footer: React.FC = () => {
                   Get in Touch
                 </a>
               </li>
-              <li className="pt-2 border-t border-[#EAE6DE]">
-                <Link to="/admin/login" className="hover:text-[#181A18] transition-colors text-[11px] font-mono-code text-[#737A73]">
-                  CMS Admin Portal &rarr;
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -93,6 +88,12 @@ export const Footer: React.FC = () => {
               Verified Profiles
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
+              {profile.linkedinUrl && <li>
+                <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-[#181A18] transition-colors font-medium text-[#2A2E2A]">
+                  <LinkedinIcon className="w-4 h-4" />
+                  <span>LinkedIn</span>
+                </a>
+              </li>}
               <li>
                 <a
                   href={profile.githubUrl}
@@ -123,10 +124,10 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#707670]">
-          <p>© {new Date().getFullYear()} Sri Manikanta Korivi. Verified personal portfolio.</p>
+          <p>c {new Date().getFullYear()} Sri Manikanta Korivi. Verified personal portfolio.</p>
           <div className="flex items-center gap-6">
             <span className="text-[11px] text-[#8C928B]">
-              Vite • React • TypeScript • Tailwind CSS
+              Vite  React  TypeScript  Tailwind CSS
             </span>
             <button
               onClick={scrollToTop}
