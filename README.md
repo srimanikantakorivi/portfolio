@@ -1,4 +1,4 @@
-# Sri Manikanta Korivi — Portfolio
+# Sri Manikanta Korivi - Portfolio
 
 Personal portfolio built with React, TypeScript, Vite and Supabase.
 
@@ -54,6 +54,10 @@ The automated tests cover upload type/size limits, private document handling, cl
 On Vercel, use the repository root, `npm ci` as the install command, `npm run build` as the build command and `dist` as the output directory. Configure the two public Supabase environment variables in Vercel for production and preview builds. The included `vercel.json` provides SPA routing and response headers.
 
 Passwords, `.env` files, `node_modules` and build output are excluded from Git. Never place a service-role key or password in a `VITE_` variable: those variables are exposed to the browser.
+
+## Dependency maintenance
+
+The TypeScript ESLint parser has a scoped override to `minimatch` 11.0.8 to address [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). It replaces the vulnerable nested 10.2.6 copy without changing application runtime dependencies. A regression test checks the resolved version and the filename matching API used by the parser.
 
 ## Content and scope
 
