@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden xl:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) =>
               link.isRoute ? (
                 <Link
@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             {profile.linkedinUrl && <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-2 text-[#565C56] hover:text-[#181A18] hover:bg-[#F2EEE4] rounded-lg transition-colors"><LinkedinIcon className="w-4 h-4" /></a>}
             <a
               href={profile.githubUrl}
@@ -143,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex xl:hidden items-center gap-2">
             {profile.linkedinUrl && <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="p-2 text-[#565C56] hover:text-[#181A18] rounded-lg"><LinkedinIcon className="w-5 h-5" /></a>}
             <a
               href={profile.githubUrl}
@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#E8E4DC] bg-[#FAF8F5] px-4 pt-3 pb-6 animate-in slide-in-from-top-2 duration-150 shadow-md">
+        <div className="xl:hidden border-b border-[#E8E4DC] bg-[#FAF8F5] px-4 pt-3 pb-6 animate-in slide-in-from-top-2 duration-150 shadow-md">
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) =>
               link.isRoute ? (
