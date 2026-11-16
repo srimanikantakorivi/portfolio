@@ -51,8 +51,8 @@ export const ProjectsPage: React.FC = () => {
         {/* Section Header */}
         <SectionHeader
           index="DIR"
-          kicker="Catalog"
-          title="All Projects &amp; Concept Prototypes"
+          kicker="My Work"
+          title="Projects"
           description="Complete index of web platforms, hackathon investigation prototypes, and active workspace systems developed by Sri Manikanta Korivi."
         />
 

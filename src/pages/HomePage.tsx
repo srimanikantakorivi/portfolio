@@ -11,9 +11,9 @@ export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col">
       <Hero />
+      <FeaturedProjects />
       <About />
       <Skills />
-      <FeaturedProjects />
       <Experience />
       <Certifications />
       <Contact />

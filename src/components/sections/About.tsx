@@ -34,10 +34,10 @@ export const About: React.FC = () => {
     <section id="about" className="py-20 md:py-28 border-b border-[#E8E4DC] bg-[#FAF8F5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          index="01"
-          kicker="Background & Overview"
-          title="Engineering curiosity grounded in software fundamentals and collaborative learning."
-          description="A verified overview of my academic trajectory at KITS Akshar Institute of Technology and student technical leadership."
+          index="02"
+          kicker="About Me"
+          title="Learning by Building."
+          description="Computer science, practical projects and student innovation."
         />
 
         {/* Editorial Split Layout */}

@@ -26,14 +26,14 @@ export const Footer: React.FC = () => {
               </h3>
             </div>
             <p className="text-sm text-[#595F59] max-w-md leading-relaxed">
-              B.Tech in Computer Science and Engineering (2024-2028) at KITS Akshar Institute of Technology. Focus on modern web experiences, software fundamentals, and practical AI-assisted workflows.
+              B.Tech in Computer Science and Engineering (2024–2028) at KITS Akshar Institute of Technology. Focus on modern web experiences, software fundamentals, and practical AI-assisted workflows.
             </p>
             <div className="pt-2 flex flex-wrap gap-2">
               <Badge variant="verified" size="sm" icon={<ShieldCheck className="w-3.5 h-3.5" />}>
-                CLLMSP  Red Team Leaders (July 2026)
+                CLLMSP • Red Team Leaders (July 2026)
               </Badge>
               <Badge variant="sage" size="sm" icon={<Award className="w-3.5 h-3.5" />}>
-                Tech Lead  KITS Innovation Club (Gen 2)
+                Tech Lead • KITS Innovation Club (Gen 2)
               </Badge>
             </div>
           </div>
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="/#skills" className="hover:text-[#181A18] transition-colors">
-                  Skills Matrix
+                  Skills & Tools
                 </a>
               </li>
               <li>
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="/#certifications" className="hover:text-[#181A18] transition-colors">
-                  Certification (CLLMSP)
+                  Certifications
                 </a>
               </li>
               <li>
@@ -82,10 +82,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Verified Profiles & Architecture */}
+          {/* Find Me Online & Architecture */}
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-xs font-semibold text-[#181A18] uppercase tracking-widest mb-3 font-mono-code">
-              Verified Profiles
+              Find Me Online
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               {profile.linkedinUrl && <li>
@@ -124,11 +124,8 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#707670]">
-          <p>c {new Date().getFullYear()} Sri Manikanta Korivi. Verified personal portfolio.</p>
+          <p>© {new Date().getFullYear()} Sri Manikanta Korivi. </p>
           <div className="flex items-center gap-6">
-            <span className="text-[11px] text-[#8C928B]">
-              Vite  React  TypeScript  Tailwind CSS
-            </span>
             <button
               onClick={scrollToTop}
               className="inline-flex items-center gap-1 hover:text-[#181A18] transition-colors p-1"

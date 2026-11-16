@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
               Sri Manikanta Korivi
             </span>
             <span className="text-[#BCB6A9]">/</span>
-            <span>Portfolio V2</span>
+            <span>Portfolio</span>
           </div>
 
           <div className="flex items-center gap-3 text-[11px] text-[#6E756E]">
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
             <div className="p-6 rounded-2xl bg-[#F4F0E8] border border-[#E2DDD2] space-y-5">
               <div className="flex items-center justify-between pb-3 border-b border-[#E3DDCF]">
                 <span className="text-[11px] font-mono-code uppercase tracking-widest text-[#666D66] font-semibold">
-                  Verified Index
+                  At a Glance
                 </span>
                 <span className="text-[10px] font-mono-code px-2 py-0.5 rounded-full bg-white text-[#3E4F3D] border border-[#D5DDD2]">
                   Active

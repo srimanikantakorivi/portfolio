@@ -17,10 +17,10 @@ export const FeaturedProjects: React.FC = () => {
     <section id="projects" className="py-20 md:py-28 border-b border-[#E8E4DC] bg-[#FAF8F5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          index="03"
+          index="01"
           kicker="Selected Works"
-          title="Featured Projects & Prototype Explorations"
-          description="Verified applications, hackathon concepts, and in-progress architectures. Each project reflects real development state without exaggerated claims."
+          title="Selected Projects"
+          description="A closer look at what I have built, shipped and explored."
           action={
             <Button
               variant="outline"
@@ -29,7 +29,7 @@ export const FeaturedProjects: React.FC = () => {
               icon={<ArrowRight className="w-4 h-4" />}
               iconPosition="right"
             >
-              All Projects Directory ({projects.length})
+              View All Projects ({projects.length})
             </Button>
           }
         />

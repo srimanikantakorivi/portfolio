@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { SectionHeader } from '../common/SectionHeader';
-import { Badge } from '../common/Badge';
 import { Button } from '../common/Button';
-import { Send, CheckCircle2, AlertCircle, ArrowUpRight, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, ArrowUpRight, MessageSquare } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../common/Icons';
 import { usePortfolioData } from '../../contexts/PortfolioDataContext';
 
@@ -60,9 +59,9 @@ export const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           index="06"
-          kicker="Communications"
-          title="Direct Inquiries & Technical Discussions"
-          description="Interested in collaborating on student innovation projects, discussing modern web architecture, or exploring AI-assisted workflows? Reach out through the form below or connect via verified developer profiles."
+          kicker="Contact"
+          title="Let’s Build Something Useful"
+          description="Have a project or an idea to discuss? Send a message or connect with me on LinkedIn."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -79,14 +78,12 @@ export const Contact: React.FC = () => {
                 <div className="p-3 rounded-xl bg-[#181A18] text-[#FAF8F5] shrink-0">
                   <GithubIcon className="w-5 h-5" />
                 </div>
-                <Badge variant="verified" size="sm">
-                  Verified Profile
-                </Badge>
+                
               </div>
 
               <div>
                 <h4 className="text-base font-semibold text-[#181A18]">
-                  GitHub Repository &amp; Activity
+                  Explore My Code
                 </h4>
                 <a
                   href={profile.githubUrl}
@@ -98,23 +95,9 @@ export const Contact: React.FC = () => {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
                 <p className="text-xs text-[#5D635D] mt-2 leading-relaxed">
-                  Explore open repositories, code samples, student project submissions, and development commits.
+                  Browse my projects and follow what I am building.
                 </p>
               </div>
-            </div>
-
-            {/* Verification Context Card */}
-            <div className="p-6 rounded-2xl bg-[#F4F0E8] border border-[#E2DDD2] space-y-3 text-xs text-[#595F59]">
-              <div className="flex items-center gap-2 text-[#181A18] font-semibold">
-                <ShieldCheck className="w-4 h-4 text-[#4D5E4B]" />
-                <span>Verified Contact Policy</span>
-              </div>
-              <p className="leading-relaxed">
-                To prevent unverified personal information exposure, direct personal telephone numbers and unconfirmed social accounts are withheld from the public interface.
-              </p>
-              <p className="leading-relaxed text-[#6E756E]">
-                All incoming messages submitted through the form are routed to the portfolio owner.
-              </p>
             </div>
           </div>
 
@@ -127,7 +110,7 @@ export const Contact: React.FC = () => {
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-[#181A18]">
-                    Message Recorded
+                    Message Sent
                   </h3>
                   <p className="text-xs sm:text-sm text-[#525852] max-w-md mx-auto leading-relaxed">
                     Thank you, <strong className="text-[#181A18]">{formState.name}</strong>. Your message has been received. I will get back to you using the email you provided.
@@ -141,7 +124,7 @@ export const Contact: React.FC = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <MessageSquare className="w-4 h-4 text-[#4D5E4B]" />
                     <h3 className="text-base font-semibold text-[#181A18]">
-                      Send an Inquiry
+                      Send a Message
                     </h3>
                   </div>
 
@@ -225,7 +208,7 @@ export const Contact: React.FC = () => {
                       disabled={submitting}
                       icon={<Send className="w-3.5 h-3.5" />}
                     >
-                      {submitting ? 'Transmitting...' : 'Transmit Message'}
+                      {submitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </div>
                 </form>

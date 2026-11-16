@@ -10,6 +10,7 @@ import { usePortfolioData } from '../../contexts/PortfolioDataContext';
 import { Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { usePortfolioMotion } from '../../hooks/usePortfolioMotion';
+import { ReadingProgress } from '../common/ReadingProgress';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -34,16 +35,16 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const handleDownloadSummary = () => {
     // Generate verified curriculum vitae text summary file
     const content = `======================================================
-SRI MANIKANTA KORIVI - CURRICULUM VITAE
+SRI MANIKANTA KORIVI — CURRICULUM VITAE
 ======================================================
 Positioning: ${profile.tagline}
 GitHub: ${profile.githubUrl}
-Status: Undergraduate Student (2024-2028)
+Status: Undergraduate Student (2024–2028)
 
 EDUCATION:
 Degree: ${profile.education.degree} in ${profile.education.field}
 Institution: ${profile.education.institution}
-Period: ${profile.education.startYear} - ${profile.education.endYear}
+Period: ${profile.education.startYear} – ${profile.education.endYear}
 
 ${primaryExp ? `CAMPUS LEADERSHIP:
 Role: ${primaryExp.title}
@@ -126,7 +127,7 @@ Document generated from Sri Manikanta Korivi Portfolio V2
     return <main className="min-h-screen bg-[#FAF8F5] flex items-center justify-center p-6">
       <div className="max-w-md text-center space-y-4" role="status">
         <h1 className="text-2xl font-semibold">Sri Manikanta Korivi</h1>
-        <p className="text-sm text-[#606760]">{loading ? 'Loading portfolio.' : dataError || 'The portfolio is currently being updated.'}</p>
+        <p className="text-sm text-[#606760]">{loading ? 'Loading portfolio…' : dataError || 'The portfolio is currently being updated.'}</p>
         {!loading && dataError && <button type="button" onClick={() => void refreshData()} className="rounded-lg bg-[#4D5E4B] px-4 py-2 text-sm text-white">Try again</button>}
       </div>
     </main>;
@@ -162,6 +163,7 @@ Document generated from Sri Manikanta Korivi Portfolio V2
       )}
 
       <Navbar onOpenResume={() => setResumeModalOpen(true)} />
+      <ReadingProgress />
 
       <main className="flex-1">
         {children}
@@ -174,7 +176,7 @@ Document generated from Sri Manikanta Korivi Portfolio V2
         isOpen={resumeModalOpen}
         onClose={() => setResumeModalOpen(false)}
         title="Curriculum Vitae Preview"
-        subtitle="Verified Academic & Technical Profile - Sri Manikanta Korivi"
+        subtitle="Verified Academic & Technical Profile — Sri Manikanta Korivi"
         maxWidth="xl"
       >
         <div className="space-y-6 text-sm text-[#414741]">
@@ -183,10 +185,10 @@ Document generated from Sri Manikanta Korivi Portfolio V2
             <div>
               <h4 className="text-base font-semibold text-[#181A18]">{profile.name}</h4>
               <p className="text-xs text-[#606760] mt-0.5">
-                {profile.education.degree} in {profile.education.field}  {profile.education.institution}
+                {profile.education.degree} in {profile.education.field} • {profile.education.institution}
               </p>
               <p className="text-xs text-[#4D5E4B] font-medium mt-1">
-                Tech Lead - KITS Innovation Club (Gen 2)  Certified LLM Security Professional
+                Tech Lead — KITS Innovation Club (Gen 2) • Certified LLM Security Professional
               </p>
             </div>
             <div className="shrink-0 flex items-center gap-2 flex-wrap">
@@ -222,7 +224,7 @@ Document generated from Sri Manikanta Korivi Portfolio V2
               <div className="flex justify-between font-medium text-xs sm:text-sm text-[#181A18]">
                 <span>{profile.education.degree} in {profile.education.field}</span>
                 <span className="text-[#656C65] font-mono-code text-xs">
-                  {profile.education.startYear} - {profile.education.endYear}
+                  {profile.education.startYear} – {profile.education.endYear}
                 </span>
               </div>
               <p className="text-xs text-[#4F564F] font-medium">

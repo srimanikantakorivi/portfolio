@@ -2,7 +2,7 @@ import { ContentBlockRenderer } from '../blocks/ContentBlockRenderer';
 import React from 'react';
 import { SectionHeader } from '../common/SectionHeader';
 import { Badge } from '../common/Badge';
-import { Users, GraduationCap, CheckCircle2 } from 'lucide-react';
+import { Users, GraduationCap } from 'lucide-react';
 import { usePortfolioData } from '../../contexts/PortfolioDataContext';
 
 export const Experience: React.FC = () => {
@@ -20,7 +20,7 @@ export const Experience: React.FC = () => {
         <SectionHeader
           index="04"
           kicker="Trajectory"
-          title="Leadership & Academic Engagement"
+          title="Experience & Education"
           description="Leadership responsibilities in KITS Innovation Club alongside undergraduate computer science studies."
         />
 
@@ -41,11 +41,6 @@ export const Experience: React.FC = () => {
                       <h3 className="text-xl font-semibold text-[#181A18]">
                         {exp.title}
                       </h3>
-                      {exp.isVerified && (
-                        <Badge variant="verified" size="sm" icon={<CheckCircle2 className="w-3 h-3" />}>
-                          Verified Position
-                        </Badge>
-                      )}
                     </div>
 
                     <p className="text-sm font-medium text-[#4D5E4B]">

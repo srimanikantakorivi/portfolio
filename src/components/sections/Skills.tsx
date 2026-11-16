@@ -17,10 +17,10 @@ export const Skills: React.FC = () => {
     <section id="skills" className="py-20 md:py-28 border-b border-[#E8E4DC] bg-[#FAF8F5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          index="02"
-          kicker="Verified Matrix"
-          title="Technical Competencies & Programming Fundamentals"
-          description="A strictly verified inventory of programming languages, web libraries, and tools actively practiced through coursework and projects."
+          index="03"
+          kicker="Skills & Tools"
+          title="What I Work With"
+          description="Languages, tools and technologies I use and continue to learn."
         />
 
         {/* Editorial Skills Ledger / List */}
@@ -70,16 +70,6 @@ export const Skills: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom Integrity Note */}
-        <div className="mt-8 p-4 rounded-xl bg-[#F4F0E8] border border-[#E2DDD2] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-[#636A63]">
-          <span className="font-mono-code text-[11px] text-[#4D5E4B] font-semibold">
-            Honest Proficiency Reporting
-          </span>
-          <span className="text-[11px] text-[#717871]">
-            Unverified frameworks, unconfirmed cloud certifications, and inflated metrics are strictly omitted.
-          </span>
         </div>
       </div>
     </section>
